@@ -1,0 +1,162 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("../img/ucab_fondo.jpg");
+  background-size: 100%;
+  background-attachment: fixed;
+  padding-top:80px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.menu_bar {
+  display:block;
+  width:100%;
+  position: fixed;
+  top:0;
+  background:#DF5B2D;
+  z-index:1000;
+}
+
+.menu_bar .bt-menu {
+  display: block;
+  float: right;
+  padding: 20px;
+  overflow: hidden;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+.menu_bar img {
+  float: left;
+  width: 70px;
+  margin-left: 40px;
+  margin-top: 15px
+}
+
+.menu_bar span {
+  float: right;
+  font-size: 40px;
+  padding-left: 20px;
+}
+
+
+
+header nav {
+  width: 30%;
+  height: calc(100% - 70px);
+  position: fixed;
+  right: -100%;
+  margin: 0;
+  overflow: auto;
+  background: #DF5B2D;
+  z-index:1000;
+}
+
+header nav ul{
+  list-style:none;
+}
+
+header nav ul li {
+  display: block;
+  border-bottom:1px solid rgba(255,255,255,.5);
+  position: relative;
+}
+
+header nav ul li a {
+  color: #fff;
+  display:block;
+  text-decoration: none;
+  padding: 20px;
+}
+
+header nav ul li a:hover{
+  background: #924025;
+  color: #fff;
+  text-decoration: none;
+}
+
+header nav ul li:hover .children {
+	display:hidden;
+}
+
+header nav ul li .children {
+	display: none;
+	background:#B36349;
+	position: relative;
+	width: 100%;
+	z-index:1000;
+}
+
+
+header nav ul li .children li{
+  display: block;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,.5);
+}
+
+header nav ul li .children li a span{
+  float: right;
+  position: relative;
+  top:3px;
+}
+
+.row{
+  margin: 100px;
+  margin-top: 40px;
+}
+.portfolio-item {
+  margin-bottom: 40px;
+}
+
+.navbar {
+  box-shadow: 2px 2px 5px #000;
+  opacity: 0.9;
+}
+
+.navbar .nav-item .nav-link {
+  color: #fff;
+}
+
+.main-header {
+  position: relative;
+  background: url(../img/background.jpg);
+  background-size: cover;
+  min-height 700px;
+}
+
+.background-overlay {
+  background: rgba(48, 51, 107,.7);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.form-control, .btn{
+  border-radius: 0;
+}
+
+.team, footer {
+  background: #30336b;
+}
+
+.borde {
+  padding:20px 0px 10px 20px;
+  width:100%;
+  background:#DF5B2D;
+  overflow: hidden;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}

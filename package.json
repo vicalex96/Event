@@ -1,0 +1,16 @@
+{
+  "name": "proyecto",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "proyecto de centro de informacion de enevetos de la ucab",
+  "dependencies": {
+    "express": "^4.16.4",
+    "jquery": "^3.3.1",
+  },
+  "devDependencies": {}
+}
