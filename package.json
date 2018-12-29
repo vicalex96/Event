@@ -1,15 +1,17 @@
 {
   "name": "event",
   "version": "0.1.0",
-  "description": "proyecto para mostrar todos los eventos que se realizan en la ucab",
+  "description": "proyecto para mostrar los eventos de la ucab",
   "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
   "dependencies": {
     "express": "^4.16.4",
+    "jquery": "^3.3.1"
   },
   "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
   "author": "vicalex",
   "license": "ISC"
 }
