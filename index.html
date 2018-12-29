@@ -14,31 +14,34 @@
 	<link rel="stylesheet" href="css/fonts.css">
 	<!--script src="js/menu.js">}</script-->
 	<script type="text/javascript">
-	$(document).ready(main);
+	$(document).ready(function(){
+		function main () {
+			$('.menu_bar span ').click(function(){
+				if (contador == 1) {
+					$('nav').animate({
+						right: '0'
+					});
+					contador = 0;
+				} else {
+					contador = 1;
+					$('nav').animate({
+						right: '-100%'
+					});
+				}
+			});
+
+			// Mostramos y ocultamos submenus
+			$('.submenu').click(function(){
+
+				$(this).children('.children').slideToggle();
+			});
+		}
+		
+	});
 
 	var contador = 1;
 
-	function main () {
-		$('.menu_bar span ').click(function(){
-			if (contador == 1) {
-				$('nav').animate({
-					right: '0'
-				});
-				contador = 0;
-			} else {
-				contador = 1;
-				$('nav').animate({
-					right: '-100%'
-				});
-			}
-		});
 
-		// Mostramos y ocultamos submenus
-		$('.submenu').click(function(){
-
-			$(this).children('.children').slideToggle();
-		});
-	}
 	</script>
 	<link rel="shortcut icon" href="img/icono.png" />
 </head>
