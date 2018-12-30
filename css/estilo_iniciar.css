@@ -30,18 +30,12 @@
   border-radius: 5px;
 }
 .form-group::before{
-  font-family: "Font Awesome\ 5 free";
   position: absolute;
   left: 28px;
   font-size: 22px;
-  padding-top: 7px;
+  padding-top: 10px;
 }
-.form-group#user-group::before{
-  content: "\f007";
-}
-.form-group#contrasena-group::before{
-  content: "\e902";
-}
+
 
 .btn-primary{
   width: 60%;
