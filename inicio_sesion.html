@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/estilo.css">
 	<link rel="stylesheet" href="css/estilo_iniciar.css">
 	<link rel="stylesheet" href="css/fonts.css">
-	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="https://code.jquery.com/jquery-latest.js"></script>
 	<script src="js/menu.js"></script>
 	<link rel="shortcut icon" href="img/icono.png" />
 </head>
@@ -25,14 +25,15 @@
 			<a href="#" class="bt-menu">
 
 				<span class="icon-menu"></span>
-				Iniciar sesion
+
 			</a>
+			<h6> Iniciar Sesion</h6>
 		</div>
 		<nav>
 			<ul>
-				<li><a href="index.html"><span class="icon-home3"></span>Inicio</a></li>
+				<li><a href="/"><span class="icon-home3"></span>  Inicio</a></li>
 				<li class="submenu">
-					<a href="#"><span class="icon-pencil"></span>Clasificar<span class="caret icon-arrow-down6"></span></a>
+					<a href="#"><span class="icon-pencil"></span>  Clasificar <span class="caret icon-circle-down"></span></a>
 					<ul class="children">
 						<li><a href="#">Ing. Informática <span class="icon-embed2"></span></a></li>
 						<li><a href="#">Ing. Telecomunicaciones <span class="icon-podcast"></span></a></li>
@@ -50,7 +51,7 @@
 						<li><a href="#">Teologia <span class="icon-pencil"></span></a></li>
 					</ul>
 				</li>
-				<li><a href="inicio_sesion.html"><span class="icon-users"></span>Iniciar sesion</a></li>
+				<li><a href="/sign-in"><span class="icon-users"></span>  Iniciar sesion</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -62,10 +63,10 @@
           <img src="img/user.png">
         </div>
         <form class="col-12">
-          <div class="form-group" id="user-group">
-            <input type="text" class="form-control" placeholder="nombre de usuario"/>
+          <div class="form-group icon-user" id="user-group">
+            <input type="text" class="form-control" placeholder="usuario"/>
           </div>
-          <div class="form-group" id="contrasena-group">
+          <div class="form-group icon-pencil" id="contrasena-group">
             <input type="password" class="form-control" placeholder="contraseña"/>
           </div>
           <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Ingresar</button>
