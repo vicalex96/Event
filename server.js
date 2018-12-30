@@ -21,4 +21,8 @@ app.get('/sign-in', function (req, res) {
 app.get('/home', function (req, res) {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
+
+app.get('/editor', function (req, res) {
+  res.sendFile(path.join(__dirname + '/editor.html'));
+});
 app.listen(process.env.PORT || 8080);
