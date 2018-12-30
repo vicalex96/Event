@@ -10,7 +10,7 @@ body {
   background: url("../img/ucab_fondo.jpg");
   background-size: 100%;
   background-attachment: fixed;
-  padding-top:80px;
+  padding-top: 62px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -25,27 +25,32 @@ body {
   z-index:1000;
 }
 
+
 .menu_bar .bt-menu {
   display: block;
   float: right;
-  padding: 20px;
-  overflow: hidden;
-  font-size: 25px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #fff;
+  padding: 20px 40px 0 0 ;
+  color: #000000;
+
 }
 
 .menu_bar img {
   float: left;
   width: 70px;
-  margin-left: 40px;
-  margin-top: 15px
+  margin: 7px 0 7px 40px ;
+}
+
+.menu_bar h6 {
+  display: block;
+  float: right;
+  font-size: 20px;
+  padding: 20px 0 0 0;
+  color: #000000;
 }
 
 .menu_bar span {
   float: right;
-  font-size: 40px;
+  font-size: 25px;
   padding-left: 20px;
 }
 
@@ -53,35 +58,38 @@ body {
 
 header nav {
   width: 30%;
-  height: calc(100% - 70px);
+  height: calc(100% - 60px);
   position: fixed;
   right: -100%;
   margin: 0;
   overflow: auto;
   background: #DF5B2D;
   z-index:1000;
+
 }
 
 header nav ul{
   list-style:none;
+
 }
 
 header nav ul li {
   display: block;
-  border-bottom:1px solid rgba(255,255,255,.5);
+  border-top:    1px solid rgba(255,255,255,.2);
+  border-bottom: 1px solid rgba(255,255,255,.2);
   position: relative;
 }
 
 header nav ul li a {
-  color: #fff;
+  color: #000000;
   display:block;
   text-decoration: none;
-  padding: 20px;
+  padding: 10px;
 }
 
 header nav ul li a:hover{
   background: #924025;
-  color: #fff;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -101,7 +109,6 @@ header nav ul li .children {
 header nav ul li .children li{
   display: block;
   overflow: hidden;
-  border-bottom: 1px solid rgba(255,255,255,.5);
 }
 
 header nav ul li .children li a span{
@@ -119,12 +126,12 @@ header nav ul li .children li a span{
 }
 
 .navbar {
-  box-shadow: 2px 2px 5px #000;
+  box-shadow: 2px 2px 5px #000000;
   opacity: 0.9;
 }
 
 .navbar .nav-item .nav-link {
-  color: #fff;
+  color: #000000;
 }
 
 .main-header {
@@ -150,13 +157,27 @@ header nav ul li .children li a span{
   background: #30336b;
 }
 
+
+
 .borde {
   padding:20px 0px 10px 20px;
   width:100%;
-  background:#DF5B2D;
+  background:#C75229;
   overflow: hidden;
   font-size: 20px;
   font-weight: bold;
   text-decoration: none;
-  color: #fff;
+  color: #000000;
+  position: relative;
+  z-index: 2000
+}
+
+.borde img{
+  width: 20%;
+  margin-top: -10px;
+  display: block;
+  float: right;
+  overflow: hidden;
+  position: relative;
+  z-index: 2000;
 }
