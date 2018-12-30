@@ -3,21 +3,21 @@
   display: block;
   float: right;
   padding: 20px 40px 0 0 ;
-  color: #fff;
+  color: #000000;
 }
 
 .menu_bar .bin{
   display: block;
   float: right;
   padding: 20px 0 0 0 ;
-  color: #fff;
+  color: #000000;
 
 }
 .menu_bar .all-events{
   display: block;
   float: right;
   padding: 20px 0 0 0 ;
-  color: #fff;
+  color: #000000;
 
 }
 
@@ -25,13 +25,13 @@
   display: block;
   float: right;
   padding: 20px 0 0 0 ;
-  color: #fff;
+  color: #000000;
 
 }
 .menu_bar .exit{
   display: block;
   float: right;
   padding: 20px 0 0 0 ;
-  color: #fff;
+  color: #000000;
 
 }
