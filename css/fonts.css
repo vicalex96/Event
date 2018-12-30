@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?5c50rw');
-  src:  url('fonts/icomoon.eot?5c50rw#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?5c50rw') format('truetype'),
-    url('fonts/icomoon.woff?5c50rw') format('woff'),
-    url('fonts/icomoon.svg?5c50rw#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?am62tr');
+  src:  url('fonts/icomoon.eot?am62tr#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?am62tr') format('truetype'),
+    url('fonts/icomoon.woff?am62tr') format('woff'),
+    url('fonts/icomoon.svg?am62tr#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -60,7 +60,7 @@
 .icon-spinner9:before {
   content: "\e982";
 }
-.icon-lock:before {
+.icon-lock1:before {
   content: "\e98f";
 }
 .icon-unlocked:before {
@@ -101,4 +101,16 @@
 }
 .icon-embed2:before {
   content: "\ea80";
+}
+.icon-pencil2:before {
+  content: "\e906";
+}
+.icon-user:before {
+  content: "\e971";
+}
+.icon-lock:before {
+  content: "\e991";
+}
+.icon-circle-down:before {
+  content: "\ea43";
 }
