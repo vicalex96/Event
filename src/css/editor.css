@@ -1,0 +1,55 @@
+
+.menu_bar .plus{
+  display: block;
+  float: right;
+  padding: 20px 40px 0 0 ;
+  color: #fff;
+}
+.menu_bar .plus:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+.menu_bar .bin{
+  display: block;
+  float: right;
+  padding: 20px 0 0 0 ;
+  color: #fff;
+
+}
+.menu_bar .bin:hover .tooltiptext {
+  visibility: visible;
+}
+
+.menu_bar .all-events{
+  display: block;
+  float: right;
+  padding: 20px 0 0 0 ;
+  color: #fff;
+
+}
+.menu_bar .all-events:hover .tooltiptext {
+  visibility: visible;
+}
+
+.menu_bar .menu{
+  display: block;
+  float: right;
+  padding: 20px 0 0 0 ;
+  color: #fff;
+
+}
+.menu_bar .menu:hover .tooltiptext {
+  visibility: visible;
+}
+
+.menu_bar .exit{
+  display: block;
+  float: right;
+  padding: 20px 0 0 0 ;
+  color: #fff;
+
+}
+.menu_bar .exit:hover .tooltiptext {
+  visibility: visible;
+}

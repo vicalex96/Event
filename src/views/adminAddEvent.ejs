@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include imports/headIndex.ejs %>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/editor.css">
+    <link rel="stylesheet" href="css/estilo_iniciar.css">
+  </head>
+  <body>
+    <body>
+
+    <% include parts/menueditor.ejs %>
+
+    <div class="modal-dialog text-center">
+      <div class="col-sm-12 main-section">
+        <div class="modal-content">
+          <form class="col-12" action="/editor" method="POST">
+
+              <label for="title"> Titulo </label>
+              <input type="text" name="title" id="title" class="form-control" placeholder="Titulo de la imagen"/>
+
+              <label for="career"> Carrera </label>
+              <select name="career" id="career" class="form-control" placeholder="selecciona carrera">
+                    <option>  sin especificar </option>
+                    <option>  Ing. Informática </option>
+                    <option>  Ing. Telecomunicaciones </option>
+                    <option>  Ing. Industrial </option>
+                    <option>  Ing. Civil </option>
+                    <option>  Administración y Contaduría </option>
+                    <option>  Ciencias Sociales </option>
+                    <option>  Comunicacion Social </option>
+                    <option>  Derecho </option>
+                    <option>  Economía </option>
+                    <option>  Educación </option>
+                    <option>  Filosofía </option>
+                    <option>  Letras </option>
+                    <option>  Psicologia </option>
+                    <option>  Teologia </option>
+
+                  </select>
+
+              <label for="description"> Informacion </label>
+              <textarea name="description" id="description" class="form-control"></textarea>
+              <!--<label for="archivo"> Imagen </label>
+              <input type="file" name="archivo" id="archivo"class="form-control"/>-->
+
+            <input type="Submit" value="Agregar" class="btn btn-info">
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

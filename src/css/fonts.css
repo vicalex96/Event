@@ -1,0 +1,116 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?am62tr');
+  src:  url('fonts/icomoon.eot?am62tr#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?am62tr') format('truetype'),
+    url('fonts/icomoon.woff?am62tr') format('woff'),
+    url('fonts/icomoon.svg?am62tr#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home3:before {
+  content: "\e902";
+}
+.icon-pencil:before {
+  content: "\e905";
+}
+.icon-images:before {
+  content: "\e90e";
+}
+.icon-podcast:before {
+  content: "\e91c";
+}
+.icon-book:before {
+  content: "\e91f";
+}
+.icon-library:before {
+  content: "\e921";
+}
+.icon-floppy-disk:before {
+  content: "\e962";
+}
+.icon-bubbles:before {
+  content: "\e96c";
+}
+.icon-users:before {
+  content: "\e972";
+}
+.icon-user-plus:before {
+  content: "\e973";
+}
+.icon-user-tie:before {
+  content: "\e976";
+}
+.icon-spinner9:before {
+  content: "\e982";
+}
+.icon-lock1:before {
+  content: "\e98f";
+}
+.icon-unlocked:before {
+  content: "\e990";
+}
+.icon-equalizer:before {
+  content: "\e992";
+}
+.icon-cog:before {
+  content: "\e994";
+}
+.icon-hammer:before {
+  content: "\e996";
+}
+.icon-stats-bars:before {
+  content: "\e99c";
+}
+.icon-hammer2:before {
+  content: "\e9a8";
+}
+.icon-bin:before {
+  content: "\e9ac";
+}
+.icon-switch:before {
+  content: "\e9b6";
+}
+.icon-menu:before {
+  content: "\e9bd";
+}
+.icon-plus:before {
+  content: "\ea0a";
+}
+.icon-exit:before {
+  content: "\ea14";
+}
+.icon-omega:before {
+  content: "\ea66";
+}
+.icon-embed2:before {
+  content: "\ea80";
+}
+.icon-pencil2:before {
+  content: "\e906";
+}
+.icon-user:before {
+  content: "\e971";
+}
+.icon-lock:before {
+  content: "\e991";
+}
+.icon-circle-down:before {
+  content: "\ea43";
+}

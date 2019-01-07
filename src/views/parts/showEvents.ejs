@@ -1,0 +1,17 @@
+<div class="row">
+      <!-- ITEMS -->
+      <% for(var i = 0; i < evento.length; i++) { %>
+        <div class="col-lg-6 col-sm-4 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="img/imagen2.jpg" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title"><%= evento[i].title %></h4>
+              <p class="card-text">
+                <%= evento[i].description %>
+              </p>
+          </div>
+          <a class="link_editar"href="/editor/<%= evento[i]._id %>/edit">Editar</a>
+        </div>
+      </div>
+     <% } %>
+</div>

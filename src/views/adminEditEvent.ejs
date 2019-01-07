@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include imports/headIndex.ejs %>
+    <link rel="shortcut icon" href="./../../img/event_icono.png" />
+    <link rel="stylesheet" href="./../../css/estilo.css">
+    <link rel="stylesheet" href="./../../css/editor.css">
+    <link rel="stylesheet" href="./../../css/estilo_iniciar.css">
+    <link rel="stylesheet" href="./../../css/fonts.css">
+  </head>
+  <body>
+    <body>
+      <div class="menu_bar">
+        <img src="./../../img/logo.png" class="img-logo"></img>
+
+        <a href="/agregar_evento" class="plus">
+          <span class="icon-plus"></span>
+          <span class="tooltiptext">agregar evento</span>
+        </a>
+
+        <a href="/borrar_evento" class="bin">
+          <span class="icon-bin"></span>
+          <span class="tooltiptext">eliminar eventos</span>
+        </a>
+
+        <a href="/mis_publicaciones" class="all-events">
+          <span class="icon-images"></span>
+          <span class="tooltiptext">mostrar eventos</span>
+        </a>
+
+        <a href="/editor" class="menu">
+          <span class="icon-equalizer"></span>
+          <span class="tooltiptext">menu</span>
+        </a>
+
+        <a href="/logout" class="exit">
+          <span class="icon-exit"></span>
+          <span class="tooltiptext">desconectarse</span>
+        </a>
+        <h6> Editor</h6>
+      </div>
+
+
+    <div class="modal-dialog text-center">
+      <div class="col-sm-8 main-section">
+        <div class="modal-content">
+          <div class="col-12 user-img">
+          </div>
+
+          <form class="col-12" action="/editor/<%=evento._id%>?_method=PUT" method="post">
+            <div class="form-group" id="user-group">
+              <label for="title">Titulo</label>
+              <input type="text" name="title" id="title" class="form-control"
+            value="<%= evento.title %>"/>
+            </div>
+
+            <label for="career"> Carrera </label>
+            <select name="career" id="career" class="form-control">
+                  <option>  <%= evento.career %> </option>
+                  <option>  sin especificar </option>
+                  <option>  Ing. Informática </option>
+                  <option>  Ing. Telecomunicaciones </option>
+                  <option>  Ing. Industrial </option>
+                  <option>  Ing. Civil </option>
+                  <option>  Administración y Contaduría </option>
+                  <option>  Ciencias Sociales </option>
+                  <option>  Comunicacion Social </option>
+                  <option>  Derecho </option>
+                  <option>  Economía </option>
+                  <option>  Educación </option>
+                  <option>  Filosofía </option>
+                  <option>  Letras </option>
+                  <option>  Psicologia </option>
+                  <option>  Teologia </option>
+
+                </select>
+
+            <label for="description"> Descripcion </label>
+            <label for="description"> Descripcion </label>
+            <textarea name="description" id="description" class="form-control">
+            <%= evento.description %></textarea>
+            <input type="submit" value= " guardar"class="btn btn-primary">
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
