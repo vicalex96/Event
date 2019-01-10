@@ -13,7 +13,9 @@ module.exports = (app, passport) => {
 				return;
 			}
 			//muestra todas las imagenes
-			res.render("index",{evento: evento});
+			res.render("index",{
+				evento: evento,
+				link: req.url});
 		});
 	});
 
@@ -59,7 +61,7 @@ module.exports = (app, passport) => {
 			//muestra todas las imagenes
 			res.render("adminMyEvents",{
 				evento: evento,
-				user: req.user}
+				link: req.url}
 			 );
 		});
 	})
