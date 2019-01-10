@@ -9,9 +9,13 @@
               <p class="card-text">
                 <%= evento[i].description %>
               </p>
+              <h6> Carrera enfocada: <%= evento[i].career %></h6>
           </div>
-          <a class="link_editar"href="/editor/<%= evento[i]._id %>/edit">Editar</a>
+          <% if(link == '/mis_publicaciones'){%>
+              <a class="link_editar"href="/editor/<%= evento[i]._id %>/edit">Editar</a>
+          <%}%>
         </div>
       </div>
      <% } %>
+
 </div>
