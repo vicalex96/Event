@@ -5,8 +5,10 @@ const User = require('./app/models/user');
 
 module.exports = (app, passport) => {
 
+var career = '';
 	// index routes
 	app.get('/', (req, res) => {
+
 		Event.find({},function(err, evento){
 			if(err){
 				res.render(err);
@@ -15,20 +17,71 @@ module.exports = (app, passport) => {
 			//muestra todas las imagenes
 			res.render("index",{
 				evento: evento,
-				link: req.url});
+				link: req.url,
+				career: career
+			});
 		});
-	});
+		career = '';
+		});
+
+app.get(['/IngInformatica', '/IngTelecom','/IngIndustrial','/IngCivil','/AdmYContad'
+				,'/CienciasS', '/ComunicacionS', '/Derecho', '/Economia','/Educacion'
+				,'/Filosofia', '/Letras','/Piscologia','/Teologia'], (req, res) => {
+	switch(req.originalUrl){
+		case '/IngInformatica': career = 'Ing. Informática'
+			break;
+		case '/IngTelecom':     career = 'Ing. Telecomunicaciones'
+			break;
+		case '/IngIndustrial':  career = 'Ing. Industrial'
+			break;
+		case '/IngCivil':       career = 'Ing. Civil'
+			break;
+		case '/AdmYContad':     career = 'Administración y Contaduría'
+			break;
+		case '/CienciasS':      career = 'Ciencias Sociales'
+			break;
+		case '/ComunicacionS':  career = 'Comunicacion Social'
+			break;
+		case '/Derecho':        career = 'Derecho'
+			break;
+		case '/Economia':       career = 'Economía'
+			break;
+		case '/Educacion':      career = 'Educación'
+			break;
+		case '/Filosofia':      career = 'Filosofía'
+			break;
+		case '/Letras':         career = 'Letras'
+			break;
+		case '/Piscologia':     career = 'Psicologia'
+			break;
+		case '/Teologia':       career = 'Teologiabreak'
+			break;
+	}
+	console.log('url: ' + req.originalUrl);
+		Event.find({career: career},function(err, evento){
+			if(err){
+				res.render(err);
+				return;
+			}
+			//muestra todas las imagenes
+			res.render("index",{
+				evento: evento,
+				link: req.url,
+				career: career
+			});
+		});
+});
 
 	//login view
-	app.get('/login', (req, res) => {
-		if (req.isAuthenticated()) {
-			res.redirect('/mis_publicaciones');
-		}else{
-			res.render('login', {
-				message: req.flash('loginMessage')
-			});
-		}
-	});
+app.get('/login', (req, res) => {
+	if (req.isAuthenticated()) {
+		res.redirect('/mis_publicaciones');
+	}else{
+		res.render('login', {
+			message: req.flash('loginMessage')
+		});
+	}
+});
 
 	app.post('/login', passport.authenticate('local-login', {
 		successRedirect: '/mis_publicaciones',
