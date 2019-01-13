@@ -7,16 +7,18 @@
   <body>
     <body>
 
+      <% include parts/menuHeader.ejs %>
+        <h6> Inicio <%= career%> </h6>
+      <% include parts/menu.ejs %>
 
-    <% include parts/menuHeader.ejs %>
-      <h6> Inicio <%= career%> </h6>
-    <% include parts/menu.ejs %>
+    <div class="body-rows">
+      <% include parts/showEvents.ejs %>
 
-    <% include parts/showEvents.ejs %>
+
+    </div>
 
     <% include imports/infobar.ejs %>
-
     <% include imports/tailIndex.ejs %>
-
+    
   </body>
 </html>

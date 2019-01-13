@@ -5,17 +5,27 @@
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="img/imagen2.jpg" alt=""></a>
             <div class="card-body">
-              <h4 class="card-title"><%= evento[i].title %></h4>
+              <h4 class="card-title text-center"><%= evento[i].title %></h4>
+
+              <h6> Carrera enfocada: <%= evento[i].career %></h6>
+
               <p class="card-text">
                 <%= evento[i].description %>
               </p>
-              <h6> Carrera enfocada: <%= evento[i].career %></h6>
           </div>
+
           <% if(link == '/mis_publicaciones'){%>
-              <a class="link_editar"href="/editor/<%= evento[i]._id %>/edit">Editar</a>
+              <a class=" link_editar"href="/editor/<%= evento[i]._id %>/edit">Editar</a>
+          <%}%>
+          <% if(link == '/borrar_evento'){%>
+              <a class=" link_editar"href="/editor/<%= evento[i]._id %>/edit">Eliminar</a>
           <%}%>
         </div>
       </div>
      <% } %>
-
+     <% if(!evento.length){ %>
+       <div class=" container col-lg-6 text-center info-user">
+         <h2> No se han encontrado Eventos</h2>
+       </div>
+       <% } %>
 </div>

@@ -54,7 +54,7 @@ app.get(['/IngInformatica', '/IngTelecom','/IngIndustrial','/IngCivil','/AdmYCon
 			break;
 		case '/Piscologia':     career = 'Psicologia'
 			break;
-		case '/Teologia':       career = 'Teologiabreak'
+		case '/Teologia':       career = 'Teologia'
 			break;
 	}
 	console.log('url: ' + req.originalUrl);

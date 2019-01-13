@@ -5,7 +5,7 @@
     <link rel="shortcut icon" href="./../../img/event_icono.png" />
     <link rel="stylesheet" href="./../../css/estilo.css">
     <link rel="stylesheet" href="./../../css/editor.css">
-    <link rel="stylesheet" href="./../../css/estilo_iniciar.css">
+    <link rel="stylesheet" href="./../../css/estilo_editar.css">
     <link rel="stylesheet" href="./../../css/fonts.css">
   </head>
   <body>
@@ -41,50 +41,53 @@
       </div>
 
 
-    <div class="modal-dialog text-center">
-      <div class="col-sm-8 main-section">
-        <div class="modal-content">
-          <div class="col-12 user-img">
+      <div class="container col-lg-6 text-center">
+        <form class="form-control editor" action="/editor/<%=evento._id%>?_method=PUT"
+              method="post">
+              <h4> Editar Evento </h4>
+          <div class="form-group">
+            <label for="title">Titulo: </label>
+            <input type="text" name="title" id="title" class="form-control"
+                value="<%= evento.title %>"/>
           </div>
 
-          <form class="col-12" action="/editor/<%=evento._id%>?_method=PUT" method="post">
-            <div class="form-group" id="user-group">
-              <label for="title">Titulo</label>
-              <input type="text" name="title" id="title" class="form-control"
-            value="<%= evento.title %>"/>
-            </div>
-
-            <label for="career"> Carrera </label>
-            <select name="career" id="career" class="form-control">
-                  <option>  <%= evento.career %> </option>
-                  <option>  sin especificar </option>
-                  <option>  Ing. Informática </option>
-                  <option>  Ing. Telecomunicaciones </option>
-                  <option>  Ing. Industrial </option>
-                  <option>  Ing. Civil </option>
-                  <option>  Administración y Contaduría </option>
-                  <option>  Ciencias Sociales </option>
-                  <option>  Comunicacion Social </option>
-                  <option>  Derecho </option>
-                  <option>  Economía </option>
-                  <option>  Educación </option>
-                  <option>  Filosofía </option>
-                  <option>  Letras </option>
-                  <option>  Psicologia </option>
-                  <option>  Teologia </option>
-
-                </select>
-
-            <label for="description"> Descripcion </label>
-            <label for="description"> Descripcion </label>
-            <textarea name="description" id="description" class="form-control">
-            <%= evento.description %></textarea>
-            <input type="submit" value= " guardar"class="btn btn-primary">
-          </form>
+          <div class="form-group">
+            <label for="career"> Carrera: </label>
+              <select name="career" id="career" class="form-control">
+                <option>  <%= evento.career %> </option>
+                <option>  sin especificar </option>
+                <option>  Ing. Informática </option>
+                <option>  Ing. Telecomunicaciones </option>
+                <option>  Ing. Industrial </option>
+                <option>  Ing. Civil </option>
+                <option>  Administración y Contaduría </option>
+                <option>  Ciencias Sociales </option>
+                <option>  Comunicacion Social </option>
+                <option>  Derecho </option>
+                <option>  Economía </option>
+                <option>  Educación </option>
+                <option>  Filosofía </option>
+                <option>  Letras </option>
+                <option>  Psicologia </option>
+                <option>  Teologia </option>
+              </select>
           </div>
-        </div>
+
+          <div class="form-group">
+            <label for="description"> Descripcion: </label>
+            <textarea name="description" id="description" class="form-control" placeholder=""><%=evento.description %>
+            </textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="archivo"> Imagen: </label>
+            <input type="file" id="archivo">
+          </div>
+
+          <input type="submit" value= " guardar " class="btn btn-primary">
+
+        </form>
       </div>
-    </div>
 
   </body>
 </html>
