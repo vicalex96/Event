@@ -5,7 +5,7 @@
     <link rel="shortcut icon" href="./../../img/event_icono.png" />
     <link rel="stylesheet" href="./../../css/estilo.css">
     <link rel="stylesheet" href="./../../css/editor.css">
-    <link rel="stylesheet" href="./../../css/estilo_editar.css">
+    <link rel="stylesheet" href="./../../css/estilo_CRUD.css">
     <link rel="stylesheet" href="./../../css/fonts.css">
   </head>
   <body>
@@ -43,7 +43,7 @@
 
       <div class="container col-lg-6 text-center">
         <form class="form-control editor" action="/editor/<%=evento._id%>?_method=PUT"
-              method="post">
+              method="post" enctype="multipart/form-data">
               <h4> Editar Evento </h4>
           <div class="form-group">
             <label for="title">Titulo: </label>

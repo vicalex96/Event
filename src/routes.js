@@ -1,11 +1,11 @@
 var Event = require("./app/models/event");
 var event_finder_middleware = require("./app/findImage");
 const User = require('./app/models/user');
-//const fs = require("fs");
-
-module.exports = (app, passport) => {
-
+const fs = require("fs");
 var career = '';
+
+module.exports = (app, passport,cloudinary) => {
+
 	// index routes
 	app.get('/', (req, res) => {
 
@@ -142,8 +142,6 @@ app.get('/login', (req, res) => {
 		res.render("adminEditEvent");
 	})
 
-
-
 	app.get("/borrar_evento", function(req,res){
 		res.render("adminDeleteEvent");
 	});
@@ -211,29 +209,34 @@ app.get('/login', (req, res) => {
 	})
 	//guarda la informacion
 	.post(function(req,res){
-	//var extension =  req.body.archivo.extension.split(".").pop();
-		var data = {
-			title: req.body.title,
-			creator: req.user._id,
-			career: req.body.career,
-			description: req.body.description
-			//extension: extension
-		}
+			console.log('file: ' + req.file.path);
+			console.log('Descripcion: ' +req.body.description);
 
-		var evento = new Event(data);
-		evento.save(function(err){
-			if(!err){
-			//fs.rename(req.body.archivo.path, "archivos/"+evento._id+"."+extension);
-				console.log('todo bien');
-				res.redirect("/mis_publicaciones");
+			var data = {
+				title: req.body.title,
+				creator: req.user._id,
+				career: req.body.career,
+				description: req.body.description,
+				image: req.file.originalname
 			}
-			else{
-				console.log('todo mal');
-				res.render(err);
-			}
-		});
 
-	});
+			cloudinary.uploader.upload(req.file.path,
+				function(repuesta){
+					console.log("url: " + repuesta.url);
+					var evento = new Event(data);
+					evento.image = repuesta.url;
+					evento.save(function(err){
+						if(!err){
+							console.log('todo bien');
+							res.redirect("/mis_publicaciones");
+						}
+						else{
+							console.log('todo mal');
+							res.render(err);
+						}
+					});
+				});
+  });
 
 
 	// desconectarse

@@ -4,50 +4,56 @@
     <% include imports/headIndex.ejs %>
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/editor.css">
-    <link rel="stylesheet" href="css/estilo_iniciar.css">
+    <link rel="stylesheet" href="css/estilo_CRUD.css">
   </head>
   <body>
     <body>
 
     <% include parts/menueditor.ejs %>
 
-    <div class="modal-dialog text-center">
-      <div class="col-sm-12 main-section">
-        <div class="modal-content">
-          <form class="col-12" action="/editor" method="POST">
-
-              <label for="title"> Titulo </label>
-              <input type="text" name="title" id="title" class="form-control" placeholder="Titulo de la imagen"/>
-
-              <label for="career"> Carrera </label>
-              <select name="career" id="career" class="form-control" placeholder="selecciona carrera">
-                    <option>  sin especificar </option>
-                    <option>  Ing. Informática </option>
-                    <option>  Ing. Telecomunicaciones </option>
-                    <option>  Ing. Industrial </option>
-                    <option>  Ing. Civil </option>
-                    <option>  Administración y Contaduría </option>
-                    <option>  Ciencias Sociales </option>
-                    <option>  Comunicacion Social </option>
-                    <option>  Derecho </option>
-                    <option>  Economía </option>
-                    <option>  Educación </option>
-                    <option>  Filosofía </option>
-                    <option>  Letras </option>
-                    <option>  Psicologia </option>
-                    <option>  Teologia </option>
-
-                  </select>
-
-              <label for="description"> Informacion </label>
-              <textarea name="description" id="description" class="form-control"></textarea>
-              <!--<label for="archivo"> Imagen </label>
-              <input type="file" name="archivo" id="archivo"class="form-control"/>-->
-
-            <input type="Submit" value="Agregar" class="btn btn-info">
-          </form>
+    <div class="container col-lg-6 text-center">
+      <form class="form-control editor" action="/editor"method="post"
+            enctype="multipart/form-data">
+            <h4> Nuevo Evento </h4>
+        <div class="form-group">
+          <label for="title">Titulo: </label>
+          <input type="text" name="title" id="title" class="form-control" placeholder="Titulo del  Evento"/>
         </div>
-      </div>
+
+        <div class="form-group">
+          <label for="career"> Carrera: </label>
+            <select name="career" id="career" class="form-control">
+              <option>  sin especificar </option>
+              <option>  Ing. Informática </option>
+              <option>  Ing. Telecomunicaciones </option>
+              <option>  Ing. Industrial </option>
+              <option>  Ing. Civil </option>
+              <option>  Administración y Contaduría </option>
+              <option>  Ciencias Sociales </option>
+              <option>  Comunicacion Social </option>
+              <option>  Derecho </option>
+              <option>  Economía </option>
+              <option>  Educación </option>
+              <option>  Filosofía </option>
+              <option>  Letras </option>
+              <option>  Psicologia </option>
+              <option>  Teologia </option>
+            </select>
+        </div>
+
+        <div class="form-group">
+          <label for="description"> Descripcion: </label>
+          <textarea name="description" id="description" class="form-control" placeholder="Descripcion del evento"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="image"> Imagen: </label>
+          <input type="file" name="image" id="image">
+        </div>
+
+        <input type="submit" value= " guardar " class="btn btn-primary">
+
+      </form>
     </div>
 
   </body>
