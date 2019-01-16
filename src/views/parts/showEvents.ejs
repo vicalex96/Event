@@ -14,17 +14,7 @@
             <h6 class="list-group-item">Carrera enfocada: <%= evento[i].career %></h6>
 
 
-          <% if(link == '/mis_publicaciones') { %>
-            <form class= "link" action="/editor/<%= evento[i]._id %>/edit"
-              method= "POST">
-                <button class=" link_editar btn btn-sm btn-default"><i class="fa fa-fw icon-pencil"></i> editar</button>
-            </form>
-          <% } if(link == '/borrar_evento') { %>
-            <form class= "link" action="/editor/<%= evento[i]._id %>?_method=DELETE"
-              method= "POST">
-                <button class="link_editar btn btn-sm btn-default"><i class="fa fa-fw icon-bin"></i> eliminar</button>
-            </form>
-          <% }%>
+
         </div>
       </div>
      <% } %>
