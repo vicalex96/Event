@@ -23,28 +23,28 @@ body {
 }
 
 .link_editar{
-  display: block;
-  float: left;
+  display:block;
+  float: right;
+
   background:#DF5B2D;
-  width:  65px;
-  margin: 0 0 5px 5px;
-  padding: 0 10px;
+  width:  90px;
+  margin: 5px 10px 5px 10px;
+  padding: 5px 0 5px;
+
   color : #fff;
   font-weight: bold;
   text-decoration: none;
-  border-radius: 5px;
+  text-align: center;
+  border-radius: 3rem;
 }
 
 .link_editar:hover{
-
   background:#C75229;
-  width:  65px;
-  margin: 0 0 5px 5px;
-  padding: 0 10px;
+
   font-weight: bold;
   text-decoration: none;
+  text-align: center;
   color : #fff;
-  border-radius: 5px;
 }
 
 .menu_bar .tooltiptext {

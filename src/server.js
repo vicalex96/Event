@@ -49,7 +49,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 //app.use(formidable.parse({ keepExtensions: true}));
 app.use(methodOverride("_method"));
 app.use(multer({
-	dest: path.join(__dirname,'uploads')
+	dest: path.join('/uploads')
 }).single('image'));
 
 

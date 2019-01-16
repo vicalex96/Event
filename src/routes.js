@@ -128,7 +128,7 @@ app.get('/login', (req, res) => {
 			//muestra todas las imagenes
 			res.render("adminDeleteEvent",{
 				evento: evento,
-				user: req.user}
+				link: req.url}
 			 );
 		});
 	});
@@ -175,12 +175,19 @@ app.get('/login', (req, res) => {
 
 	//elimina
 	.delete(function(req,res){
-		/* Eliminar y realiza otras acciones en el momento
-		Event.findById(req.params.id,function(err,evento){
-			evento.remove()
-		}*/
+			// Eliminar y realiza otras acciones en el momento
+			var img_id;
+			Event.findById(req.params.id,function(err,evento){
+			  img_id = evento.image.split("/");
+				img_id = img_id[img_id.length-1].split(".");
+				console.log("img: "+img_id[0]);
+				cloudinary.v2.uploader.destroy(img_id[0], function(error, result){console.log(result, error)});
+				evento.remove();
+				res.redirect('/borrar_evento');
+			});
 
-		//solo elimina
+
+		/*solo elimina
 		Event.findOneAndRemove({_id:req.params.id},function(err){
 			if(!err){
 
@@ -189,7 +196,7 @@ app.get('/login', (req, res) => {
 				console.log(err);
 				res.redirect('/borrar_evento');
 			}
-		})
+		})*/
 	});
 
 	//muestra la informacion
@@ -220,18 +227,14 @@ app.get('/login', (req, res) => {
 				image: req.file.originalname
 			}
 
-			cloudinary.uploader.upload(req.file.path,
-				function(repuesta){
-					console.log("url: " + repuesta.url);
+			cloudinary.uploader.upload(req.file.path, function(repuesta){
 					var evento = new Event(data);
 					evento.image = repuesta.url;
 					evento.save(function(err){
 						if(!err){
-							console.log('todo bien');
 							res.redirect("/mis_publicaciones");
 						}
 						else{
-							console.log('todo mal');
 							res.render(err);
 						}
 					});

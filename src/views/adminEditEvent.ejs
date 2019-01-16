@@ -45,6 +45,9 @@
         <form class="form-control editor" action="/editor/<%=evento._id%>?_method=PUT"
               method="post" enctype="multipart/form-data">
               <h4> Editar Evento </h4>
+          <div>
+            <img class="card-img-top" src="<%= evento.image %>" alt="">
+          </div>
           <div class="form-group">
             <label for="title">Titulo: </label>
             <input type="text" name="title" id="title" class="form-control"
@@ -80,8 +83,8 @@
           </div>
 
           <div class="form-group">
-            <label for="archivo"> Imagen: </label>
-            <input type="file" id="archivo">
+            <label for="image"> Cambiar Imagen: </label>
+            <input type="file" name="image" id="image">
           </div>
 
           <input type="submit" value= " guardar " class="btn btn-primary">
