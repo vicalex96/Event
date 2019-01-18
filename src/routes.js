@@ -161,17 +161,32 @@ app.get('/login', (req, res) => {
 
 	//actualiza los datos
 	.put(function(req,res){
-		res.locals.evento.title = req.body.title;
-		res.locals.evento.career = req.body.career;
-		res.locals.evento.description = req.body.description;
-		res.locals.evento.save(function(err){
-			if(!err){
-				res.redirect('/mis_publicaciones');
-			}else{
-				res.render('/editor/'+req.params.id+'edit');
+			var img_id;
+			img_id = res.locals.evento.image.split("/");
+			img_id = img_id[img_id.length-1].split(".");
+
+			res.locals.evento.title = req.body.title;
+			res.locals.evento.career = req.body.career;
+			res.locals.evento.description = req.body.description;
+			console.log("imagen:" + req.file);
+			if(req.file != null){
+				cloudinary.uploader.upload(req.file.path, function(repuesta){
+					res.locals.evento.image = repuesta.url;
+				});
 			}
+			res.locals.evento.save(function(err){
+				if(!err){
+					res.redirect("/mis_publicaciones");
+					if(req.file != null){
+						cloudinary.v2.uploader.destroy(img_id[0], function(error, result){console.log(result, error)});
+					}
+				}
+				else{
+					res.render('/editor/'+req.params.id+'edit');
+				}
+			});
+
 		})
-	})
 
 	//elimina
 	.delete(function(req,res){
@@ -180,7 +195,6 @@ app.get('/login', (req, res) => {
 			Event.findById(req.params.id,function(err,evento){
 			  img_id = evento.image.split("/");
 				img_id = img_id[img_id.length-1].split(".");
-				console.log("img: "+img_id[0]);
 				cloudinary.v2.uploader.destroy(img_id[0], function(error, result){console.log(result, error)});
 				evento.remove();
 				res.redirect('/borrar_evento');
