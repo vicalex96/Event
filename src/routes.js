@@ -168,23 +168,32 @@ app.get('/login', (req, res) => {
 			res.locals.evento.title = req.body.title;
 			res.locals.evento.career = req.body.career;
 			res.locals.evento.description = req.body.description;
-			console.log("imagen:" + req.file);
+
 			if(req.file != null){
-				cloudinary.uploader.upload(req.file.path, function(repuesta){
-					res.locals.evento.image = repuesta.url;
+				cloudinary.uploader.upload(req.file.path, function(result, error){
+					res.locals.evento.image = result.url;
+					res.locals.evento.save(function(err){
+						if(!err){
+							res.redirect("/mis_publicaciones");
+							if(req.file != null){
+								cloudinary.v2.uploader.destroy(img_id[0], function(error, result){console.log(result, error)});
+							}
+						}
+						else{
+							res.render('/editor/'+req.params.id+'edit');
+						}
+					});
 				});
-			}
-			res.locals.evento.save(function(err){
-				if(!err){
-					res.redirect("/mis_publicaciones");
-					if(req.file != null){
-						cloudinary.v2.uploader.destroy(img_id[0], function(error, result){console.log(result, error)});
-					}
+			}else{
+					res.locals.evento.save(function(err){
+						if(!err){
+							res.redirect("/mis_publicaciones");
+						}
+						else{
+							res.render('/editor/'+req.params.id+'edit');
+						}
+					});
 				}
-				else{
-					res.render('/editor/'+req.params.id+'edit');
-				}
-			});
 
 		})
 
