@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include imports/headIndex.ejs %>
+    <link rel="shortcut icon" href="./../../img/event_icono.png" />
+    <link rel="stylesheet" href="./../../css/estilo.css">
+    <link rel="stylesheet" href="./../../css/editor.css">
+    <link rel="stylesheet" href="./../../css/estilo_CRUD.css">
+    <link rel="stylesheet" href="./../../css/fonts.css">
+  </head>
+  <body>
+    <body>
+      <div class="menu_bar">
+        <img src="./../../img/logo.png" class="img-logo"></img>
+
+        <a href="/agregar_evento" class="plus">
+          <span class="icon-plus"></span>
+          <span class="tooltiptext">agregar evento</span>
+        </a>
+
+        <a href="/borrar_evento" class="bin">
+          <span class="icon-bin"></span>
+          <span class="tooltiptext">eliminar eventos</span>
+        </a>
+
+        <a href="/mis_publicaciones" class="all-events">
+          <span class="icon-images"></span>
+          <span class="tooltiptext">mostrar eventos</span>
+        </a>
+
+        <a href="/editor" class="menu">
+          <span class="icon-equalizer"></span>
+          <span class="tooltiptext">menu</span>
+        </a>
+
+        <a href="/logout" class="exit">
+          <span class="icon-exit"></span>
+          <span class="tooltiptext">desconectarse</span>
+        </a>
+        <h6> Editor</h6>
+      </div>
+
+
+      <div class="container col-lg-6 text-center">
+        <form class="form-control editor" action="/editor/<%=evento._id%>?_method=PUT"
+              method="post" enctype="multipart/form-data">
+              <h4> Editar Evento </h4>
+          <div>
+            <img class="card-img-top" src="<%= evento.image %>" alt="">
+          </div>
+          <div class="form-group">
+            <label for="title">Titulo: </label>
+            <input type="text" name="title" id="title" class="form-control"
+                value="<%= evento.title %>"/>
+          </div>
+
+          <div class="form-group">
+            <label for="career"> Carrera: </label>
+              <select name="career" id="career" class="form-control">
+                <option>  <%= evento.career %> </option>
+                <option>  sin especificar </option>
+                <option>  Ing. Informática </option>
+                <option>  Ing. Telecomunicaciones </option>
+                <option>  Ing. Industrial </option>
+                <option>  Ing. Civil </option>
+                <option>  Administración y Contaduría </option>
+                <option>  Ciencias Sociales </option>
+                <option>  Comunicacion Social </option>
+                <option>  Derecho </option>
+                <option>  Economía </option>
+                <option>  Educación </option>
+                <option>  Filosofía </option>
+                <option>  Letras </option>
+                <option>  Psicologia </option>
+                <option>  Teologia </option>
+              </select>
+          </div>
+
+          <div class="form-group">
+            <label for="description"> Descripcion: </label>
+            <textarea name="description" id="description" class="form-control" placeholder=""><%=evento.description %>
+            </textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="image"> Cambiar Imagen: </label>
+            <input type="file" name="image" id="image">
+          </div>
+
+          <input type="submit" value= " guardar " class="btn btn-primary">
+
+        </form>
+      </div>
+
+  </body>
+</html>

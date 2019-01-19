@@ -1,0 +1,35 @@
+<div class="row">
+      <!-- ITEMS -->
+      <% for(var i = 0; i < evento.length; i++) { %>
+        <div class="col-lg-4 col-sm-4 portfolio-item">
+          <div class="card h-200">
+            <img class="card-img-top" src="<%= evento[i].image %>" alt="">
+            <div class="card-body">
+              <h4 class="card-title text-center"><%= evento[i].title %></h4>
+              <p class="card-text">
+                <%= evento[i].description %>
+              </p>
+          </div>
+
+            <h6 class="list-group-item">Carrera enfocada: <%= evento[i].career %></h6>
+
+            <% if(link == '/mis_publicaciones') { %>
+              <form class= "link" action="/editor/<%= evento[i]._id %>/edit">
+                    <button class=" link_editar btn btn-sm btn-default"><i class="fa fa-fw icon-pencil"></i> editar</button>
+              </form>
+           <% } if(link == '/borrar_evento') { %>
+             <form class= "link" action="/editor/<%= evento[i]._id %>?_method=DELETE"
+                  method= "POST">
+                <button class="link_editar btn btn-sm btn-default"><i class="fa fa-fw icon-bin"></i> eliminar</button>
+             </form>
+<% }%>
+
+        </div>
+      </div>
+     <% } %>
+     <% if(!evento.length){ %>
+       <div class=" container col-lg-6 text-center info-user">
+         <h2> No se han encontrado Eventos</h2>
+       </div>
+       <% } %>
+</div>
